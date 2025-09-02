@@ -49,7 +49,7 @@ export function museumPage(k) {
                 justify-content: center;
                 max-width: 600px;
                 height: 120px;
-                background: url('/assets/BlankPlaque.PNG') no-repeat center center;
+                background: url('./assets/BlankPlaque.PNG') no-repeat center center;
                 background-size: contain;
                 padding: 25px; /* optional padding inside the plaque */
             ">

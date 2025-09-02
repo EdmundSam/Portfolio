@@ -34,4 +34,4 @@ k.loadSpriteAtlas("./sprites/PortfolioTileMap.png",
     }
 );
 
-k.loadFont("Pokemon", "../../assets/PokemonGB.ttf");
+k.loadFont("Pokemon", "./assets/PokemonGB.ttf");

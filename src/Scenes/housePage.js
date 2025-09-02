@@ -7,7 +7,7 @@ export function housePage(k) {
     houseOverlay.style.left = "0";
     houseOverlay.style.width = "100%";
     houseOverlay.style.height = "100%";
-    houseOverlay.style.background = "url('../../assets/HouseBackground.png') repeat";
+    houseOverlay.style.background = "url('/assets/HouseBackground.png') repeat"; // use leading slash
     houseOverlay.style.backgroundSize = "cover";
     houseOverlay.style.display = "flex";
     houseOverlay.style.justifyContent = "center";

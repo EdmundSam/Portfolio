@@ -36,7 +36,7 @@ export function homePage(k, roomData, sceneData = {})
     const player = map.add(makePlayer(k));
 
     const spawnPosition = positions.find(pos => pos.name === spawn);
-    console.log(spawnPosition);
+
     if (spawnPosition) {
         player.setPosition(spawnPosition.x, spawnPosition.y);
     }

@@ -24,14 +24,14 @@ export function restaurantPage(k) {
             <div style="position: relative; width: 100%; display: flex;">
                 <!-- Vertical Section -->
                 <div style="width: 200px; padding: 20px; border-right: 2px dotted #0cc0df; text-align: center; display: flex; flex-direction: column; align-items: center;">
-                    <img src='../../assets/Order Up Logo.png' style='max-width:200px; margin-bottom:5px;' alt='Order Up! Logo'>
+                    <img src='./assets/Order Up Logo.png' style='max-width:200px; margin-bottom:5px;' alt='Order Up! Logo'>
                     <div style="width:100%; border-top:2px dotted #0cc0df; margin:15px 0;"></div>
 
-                    <img src='../../assets/Order Up Cards.png' style='max-width:200px; margin-bottom:5px; margin-top: 70px;' alt='Order Up Artwork Preview'>
-                    <p><a href='../../assets/Order Up Cards.png' target='_blank'>Artwork</a></p>
+                    <img src='./assets/Order Up Cards.png' style='max-width:200px; margin-bottom:5px; margin-top: 70px;' alt='Order Up Artwork Preview'>
+                    <p><a href='./assets/Order Up Cards.png' target='_blank'>Artwork</a></p>
 
-                    <img src='../../assets/Order Up! Rules.png' style='max-width:200px; margin-bottom:5px; margin-top: 50px;' alt='Order Up Rulebook Preview'>
-                    <p><a href='../../assets/Order Up! Rules.png' target='_blank'>Rules</a></p>
+                    <img src='./assets/Order Up! Rules.png' style='max-width:200px; margin-bottom:5px; margin-top: 50px;' alt='Order Up Rulebook Preview'>
+                    <p><a href='./assets/Order Up! Rules.png' target='_blank'>Rules</a></p>
                 </div>
 
                 <!-- Horizontal Section -->

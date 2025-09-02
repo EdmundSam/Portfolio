@@ -7,7 +7,7 @@ export function museumPage(k) {
     museumOverlay.style.left = "0";
     museumOverlay.style.width = "100%";
     museumOverlay.style.height = "100%";
-    museumOverlay.style.background = "url('../../assets/Gradient.png') repeat";
+    museumOverlay.style.background = "url('./assets/Gradient.png') repeat";
     museumOverlay.style.backgroundSize = "auto";
     museumOverlay.style.display = "flex";
     museumOverlay.style.flexDirection = "row";
@@ -27,7 +27,7 @@ export function museumPage(k) {
             <div style="
                 width: 1040px; 
                 height: 603px; 
-                background: url('../../assets/PictureFrame.png') no-repeat center center; 
+                background: url('./assets/PictureFrame.png') no-repeat center center; 
                 background-size: cover; 
                 display: flex; 
                 justify-content: center; 
@@ -49,12 +49,12 @@ export function museumPage(k) {
                 justify-content: center;
                 max-width: 600px;
                 height: 120px;
-                background: url('../../assets/BlankPlaque.png') no-repeat center center;
+                background: url('./assets/BlankPlaque.png') no-repeat center center;
                 background-size: contain;
                 padding: 25px; /* optional padding inside the plaque */
             ">
                 <!-- Logo -->
-                <img src='../../assets/Cat Burglars Icon.png' style='max-width:50px;'>
+                <img src='./assets/Cat Burglars Icon.png' style='max-width:50px;'>
 
                 <!-- Game title -->
                 <h2 style='margin:5px 0 0 0;'>Cat Burglars</h2>

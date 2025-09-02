@@ -7,7 +7,7 @@ export function restaurantPage(k) {
     overlay.style.left = "0";
     overlay.style.width = "100%";
     overlay.style.height = "100%";
-    overlay.style.background = "url('../../assets/Restaurant Background.png') repeat";
+    overlay.style.background = "url('./assets/Restaurant Background.png') repeat";
     overlay.style.backgroundSize = "cover";
     overlay.style.display = "flex";
     overlay.style.justifyContent = "center";

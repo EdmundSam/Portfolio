@@ -15,9 +15,10 @@ export function intro(k)
             "Welcome to Edmund's Portfolio!\n\nMove around using the arrow keys and enter the buildings to explore my portfolio.\n\nClick anywhere to continue.",
             {
                 size: 24,
-                width: k.width() - 40, // wrap text
+                width: k.width(), // wrap text
                 align: "center",
                 font: "Pokemon",
+                baseline: "middle",
             }
         ),
         k.pos(20, k.height() / 2 - 100),
@@ -26,7 +27,7 @@ export function intro(k)
 
     // Wait for click or key press to continue
     const proceed = () => {
-        k.go("HomePage"); // or your actual home page scene
+        k.go("HomePage");
     };
 
     k.onMouseDown(proceed);

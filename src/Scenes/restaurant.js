@@ -16,14 +16,14 @@ export function restaurantPage(k) {
     overlay.style.overflow = "auto";
 
     overlay.innerHTML = `
-        <div style="position: relative; width: 700px; max-width: 95%; min-height: 80vh; margin: 50px auto; padding: 15px; background: white; box-shadow: 0 6px 25px rgba(0,0,0,0.4); display: flex; overflow: hidden;">
+        <div style="position: relative; max-width: 700px; min-height: 80vh; margin: 50px auto; padding: 15px; background: white; box-shadow: 0 6px 25px rgba(0,0,0,0.4); display: flex; overflow: hidden;">
             <!-- Blue border inside -->
-            <div style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; border: 3px solid #0cc0df; pointer-events: none;"></div>
+            <div style="position: absolute; top: 2%; left: 2%; right: 2%; bottom: 2%; border: 3px solid #0cc0df; pointer-events: none;"></div>
 
             <!-- Content -->
-            <div style="position: relative; width: 100%; display: flex;">
+            <div style="position: relative; width: 100%; max-height: 80%; display: flex;">
                 <!-- Vertical Section -->
-                <div style="width: 200px; padding: 20px; border-right: 2px dotted #0cc0df; text-align: center; display: flex; flex-direction: column; align-items: center;">
+                <div style="max-width: 200px; padding: 20px; border-right: 2px dotted #0cc0df; text-align: center; display: flex; flex-direction: column; align-items: center;">
                     <img src='./assets/Order Up Logo.png' style='max-width:200px; margin-bottom:5px;' alt='Order Up! Logo'>
                     <div style="width:100%; border-top:2px dotted #0cc0df; margin:15px 0;"></div>
 

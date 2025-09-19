@@ -8,6 +8,7 @@ export const k = kaboom({
     letterbox: true,
     global: false,
     scale,
+    scaleMode: "pixel-perfect",
 });
 
 // Load map
@@ -34,4 +35,4 @@ k.loadSpriteAtlas("./sprites/PortfolioTileMap.png",
     }
 );
 
-k.loadFont("Pokemon", "./assets/PokemonGB.ttf");
+k.loadFont("Pokemon", "./assets/PokemonClassic.ttf");

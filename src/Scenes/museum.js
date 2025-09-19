@@ -8,7 +8,7 @@ export function museumPage(k) {
     museumOverlay.style.width = "100%";
     museumOverlay.style.height = "100%";
     museumOverlay.style.background = "url('./assets/Gradient.png') repeat";
-    museumOverlay.style.backgroundSize = "auto";
+    museumOverlay.style.backgroundSize = "cover";
     museumOverlay.style.display = "flex";
     museumOverlay.style.flexDirection = "row";
     museumOverlay.style.justifyContent = "space-between";
@@ -19,25 +19,35 @@ export function museumPage(k) {
         <!-- Exit button -->
         <button id="close-museum" style="position:absolute; top:20px; right:20px; width:40px; height:40px; border-radius:50%; font-size:22px; font-weight:bold; cursor:pointer;">✕</button>
         
-        <div style="display:flex; width:100%; height:100%; justify-content:center; align-items:flex-start; padding:40px; gap:40px;">
+        <div style="
+            display: flex;
+            width: 100%;
+            height: 100%; /* ensure full viewport height */
+            justify-content: space-between;
+            align-items: stretch; /* instead of flex-start */
+            gap: 4vw;
+            flex-wrap: wrap;
+
+        ">
+
     
         <!-- Left Column (65%) -->
-        <div style="flex: 0 0 65%; display:flex; flex-direction:column; align-items:center;">
+        <div style="flex: 0 0 60%; min-width: 300px; display:flex; flex-direction:column; align-items:center; gap:2vh;">
             
             <div style="
-                width: 1040px; 
-                height: 603px; 
-                background: url('./assets/PictureFrame.png') no-repeat center center; 
-                background-size: cover; 
-                display: flex; 
-                justify-content: center; 
+                width: 100%;            
+                max-width: 1040px; 
+                aspect-ratio: 16 / 9;
+                background: url('./assets/PictureFrame.png') no-repeat center center;
+                background-size: contain;
+                display: flex;
+                justify-content: center;
                 align-items: center;
             ">
                 <iframe 
-                    src="https://www.youtube.com/embed/aVZ_uZB_F7M?si=b3b9q4CAy0tXSAtS" 
-                    frameborder="0" 
+                    src="https://www.youtube.com/embed/aVZ_uZB_F7M?si=b3b9q4CAy0tXSAtS"
                     allowfullscreen
-                    style="width: 1000px; height: 563px;"
+                    style="width: 94%; height: 95%; border: none; border-radius: 8px;"
                 ></iframe>
             </div>
 
@@ -48,10 +58,9 @@ export function museumPage(k) {
                 align-items: center;
                 justify-content: center;
                 max-width: 600px;
-                height: 120px;
                 background: url('./assets/BlankPlaque.PNG') no-repeat center center;
                 background-size: contain;
-                padding: 25px; /* optional padding inside the plaque */
+                padding: 25px; 
             ">
                 <!-- Logo -->
                 <img src='./assets/Cat Burglars Icon.png' style='max-width:50px;'>
@@ -62,7 +71,7 @@ export function museumPage(k) {
         </div>
 
         <!-- Right Column (35%) -->
-        <div style="flex: 0 0 35%; display:flex; justify-content:center; align-items:center; padding:20px;">
+        <div style="flex: 0 0 35%; min-width: 250px; display:flex; justify-content:center; align-items:flex-start;">
             <div style="max-width:400px; font-size:16px; line-height:1.6; text-align:left; color:white;">
                 <h2 style="margin-top:150px;">Contributions</h2>
                 <ul style="padding-left:20px; margin:0;">

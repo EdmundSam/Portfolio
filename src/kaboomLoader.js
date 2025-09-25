@@ -36,3 +36,6 @@ k.loadSpriteAtlas("./sprites/PortfolioTileMap.png",
 );
 
 k.loadFont("Pokemon", "./assets/PokemonClassic.ttf");
+k.loadFont("Charter", "./assets/Charter.ttf");
+k.loadFont("Copperplate", "./assets/Copperplate.otf");
+k.loadFont("BarlowXB", "./assets/BarlowXB.ttf");

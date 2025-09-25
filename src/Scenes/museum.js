@@ -17,7 +17,19 @@ export function museumPage(k) {
     museumOverlay.style.zIndex = "999";
     museumOverlay.innerHTML = `
         <!-- Exit button -->
-        <button id="close-museum" style="position:absolute; top:20px; right:20px; width:40px; height:40px; border-radius:50%; font-size:22px; font-weight:bold; cursor:pointer;">✕</button>
+        <button 
+            id="close-museum" 
+            style="position:absolute; 
+            top:20px; 
+            right:20px;
+            width:40px; 
+            height:40px; 
+            border-radius:50%; 
+            font-size:22px; 
+            font-weight:bold; 
+            cursor:pointer;"
+            >✕
+        </button>
         
         <div style="
             display: flex;
@@ -26,23 +38,26 @@ export function museumPage(k) {
             justify-content: space-between;
             align-items: stretch; /* instead of flex-start */
             gap: 4vw;
-            flex-wrap: wrap;
-
-        ">
+            flex-wrap: wrap;">
 
     
         <!-- Left Column -->
-        <div style="flex: 0 0 60%; min-width: 300px; display:flex; flex-direction:column; align-items:center; justify-content:center">
+        <div style="
+        flex: 0 0 60%; 
+        min-width: 300px; 
+        display:flex; 
+        flex-direction:column; 
+        align-items:center; 
+        justify-content:center">
             
             <div style="
-                width: 100%;            ; 
+                width: 100%;           
                 aspect-ratio: 16 / 9;
                 background: url('./assets/PictureFrame.png') no-repeat center center;
                 background-size: contain;
                 display: flex;
                 justify-content: center;
-                align-items: center;
-            ">
+                align-items: center;">
                 <iframe 
                     src="https://www.youtube.com/embed/aVZ_uZB_F7M?si=b3b9q4CAy0tXSAtS"
                     allowfullscreen
@@ -65,15 +80,20 @@ export function museumPage(k) {
                 <img src='./assets/Cat Burglars Icon.png' style='width: clamp(5%, 2vw, 30%);'>
 
                 <!-- Game title -->
-                <h2 style='margin:5px 0 0 0; font-size: clamp(10px, 1vw, 30px)'>Cat Burglars</h2>
+                <h2 style='margin:5px 0 0 0; font-size: clamp(10px, 1vw, 30px) font-family: Charter;'>Cat Burglars</h2>
             </div>
         </div>
 
         <!-- Right Column -->
-        <div style="flex: 0 0 35%; min-width: 250px; display:flex; justify-content:center; align-items:center;">
+        <div style="
+        flex: 0 0 35%; 
+        min-width: 250px; 
+        display:flex; 
+        justify-content:center; 
+        align-items:center;">
             <div style="max-width:60%; font-size: clamp(10px, 2vh, 30px); line-height:1.6; text-align:left; color:white;">
-                <h2>Contributions</h2>
-                <ul">
+                <h2 style="font-family: Copperplate;">Contributions</h2>
+                <ul" style="font-family: Charter;">
                     <li>Designed and created all 2D artwork and user interface elements.</li>
                     <li>Implemented networking functionality to support online co-op gameplay.</li>
                     <li>Developed in-game puzzles and programmed core gameplay mechanics.</li>
@@ -84,9 +104,9 @@ export function museumPage(k) {
                 </ul>
             </div>
         </div>
-</div>
-
-    `;
+    </div>
+`;
+    
     document.body.appendChild(museumOverlay);
 
     // Exit button listener

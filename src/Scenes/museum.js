@@ -7,8 +7,8 @@ export function museumPage(k) {
     museumOverlay.style.left = "0";
     museumOverlay.style.width = "100%";
     museumOverlay.style.height = "100%";
-    museumOverlay.style.background = "url('./assets/Gradient.png') repeat";
-    museumOverlay.style.backgroundSize = "cover";
+    museumOverlay.style.background = "url('./assets/Gradient.png') no-repeat center center";
+    museumOverlay.style.backgroundSize = "100% 100%";
     museumOverlay.style.display = "flex";
     museumOverlay.style.flexDirection = "row";
     museumOverlay.style.justifyContent = "space-between";
@@ -31,12 +31,11 @@ export function museumPage(k) {
         ">
 
     
-        <!-- Left Column (65%) -->
-        <div style="flex: 0 0 60%; min-width: 300px; display:flex; flex-direction:column; align-items:center; gap:2vh;">
+        <!-- Left Column -->
+        <div style="flex: 0 0 60%; min-width: 300px; display:flex; flex-direction:column; align-items:center; justify-content:center">
             
             <div style="
-                width: 100%;            
-                max-width: 1040px; 
+                width: 100%;            ; 
                 aspect-ratio: 16 / 9;
                 background: url('./assets/PictureFrame.png') no-repeat center center;
                 background-size: contain;
@@ -57,24 +56,24 @@ export function museumPage(k) {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                max-width: 600px;
                 background: url('./assets/BlankPlaque.PNG') no-repeat center center;
                 background-size: contain;
-                padding: 25px; 
+                padding: 10px; 
+                margin-top: 2vh;
             ">
                 <!-- Logo -->
-                <img src='./assets/Cat Burglars Icon.png' style='max-width:50px;'>
+                <img src='./assets/Cat Burglars Icon.png' style='width: clamp(5%, 2vw, 30%);'>
 
                 <!-- Game title -->
-                <h2 style='margin:5px 0 0 0;'>Cat Burglars</h2>
+                <h2 style='margin:5px 0 0 0; font-size: clamp(10px, 1vw, 30px)'>Cat Burglars</h2>
             </div>
         </div>
 
-        <!-- Right Column (35%) -->
-        <div style="flex: 0 0 35%; min-width: 250px; display:flex; justify-content:center; align-items:flex-start;">
-            <div style="max-width:400px; font-size:16px; line-height:1.6; text-align:left; color:white;">
-                <h2 style="margin-top:150px;">Contributions</h2>
-                <ul style="padding-left:20px; margin:0;">
+        <!-- Right Column -->
+        <div style="flex: 0 0 35%; min-width: 250px; display:flex; justify-content:center; align-items:center;">
+            <div style="max-width:60%; font-size: clamp(10px, 2vh, 30px); line-height:1.6; text-align:left; color:white;">
+                <h2>Contributions</h2>
+                <ul">
                     <li>Designed and created all 2D artwork and user interface elements.</li>
                     <li>Implemented networking functionality to support online co-op gameplay.</li>
                     <li>Developed in-game puzzles and programmed core gameplay mechanics.</li>

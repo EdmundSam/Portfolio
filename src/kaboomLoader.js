@@ -14,26 +14,36 @@ export const k = kaboom({
 // Load map
 k.loadSprite("map", "./maps/Portfolio Map.png");
 
-k.loadSpriteAtlas("./sprites/PortfolioTileMap.png",
+// 🧭 Name map: Tiled name → Kaboom name
+const TILESET_MAP = {
+  "Portfolio Tile Map": "PortfolioTileMap",
+  "Buildings": "Buildings"
+};
+
+// 🖼 Load sprites (Kaboom IDs, not Tiled names)
+k.loadSprite("PortfolioTileMap", "./sprites/PortfolioTileMap.png", {
+  sliceX: 12, 
+  sliceY: 6  
+});
+
+k.loadSprite("Buildings", "./sprites/Buildings.png", {
+  sliceX: 17,
+  sliceY: 12
+});
+
+
+k.loadSprite("player", "./sprites/Character.png",
+{
+    sliceX: 4,
+    sliceY: 4,
+    anims:
     {
-        player:
-        {
-            x: 32,
-            y: 256,
-            width: 128,
-            height: 128,
-            sliceX: 4,
-            sliceY: 4,
-            anims:
-            {
-                down: {from: 0, to: 3, loop: true},
-                left: {from: 4, to: 7, loop: true},
-                right: {from: 8, to: 11, loop: true},
-                up: {from: 12, to: 15, loop: true},
-            },
-        },
-    }
-);
+        down: {from: 0, to: 3, loop: true},
+        left: {from: 4, to: 7, loop: true},
+        right: {from: 8, to: 11, loop: true},
+        up: {from: 12, to: 15, loop: true},
+    },
+});
 
 k.loadFont("Pokemon", "./assets/PokemonClassic.ttf");
 k.loadFont("Charter", "./assets/Charter.ttf");

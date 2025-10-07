@@ -60,3 +60,42 @@ export function setDoors(k, map, doors)
         ]);
     }
 }
+
+const TILESET_MAP = {
+  "Portfolio Tile Map": "PortfolioTileMap",
+  "Buildings": "Buildings"
+};
+
+export function setMapLayers(k, mapData) {
+    for (const layer of mapData.layers) {
+        if (layer.type !== "tilelayer") continue;
+
+        for (let y = 0; y < layer.height; y++) {
+            for (let x = 0; x < layer.width; x++) {
+                const tileIndex = layer.data[y * layer.width + x];
+                if (tileIndex === 0) continue;
+
+                const tileset = mapData.tilesets.find(ts =>
+                    tileIndex >= ts.firstgid &&
+                    tileIndex < ts.firstgid + ts.tilecount
+                );
+                if (!tileset) continue;
+
+                const kaboomSpriteName = TILESET_MAP[tileset.name];
+                if (!kaboomSpriteName) {
+                    console.warn(`No Kaboom mapping for tileset ${tileset.name}`);
+                    continue;
+                }
+
+                const tileId = tileIndex - tileset.firstgid;
+                const tileSize = tileset.tilewidth;
+
+                k.add([
+                    k.sprite(kaboomSpriteName, { frame: tileId }),
+                    k.pos(x * tileSize, y * tileSize),
+                    k.z(layer.name === "Roofs" ? 200 : 0),
+                ]);
+            }
+        }
+    }
+}

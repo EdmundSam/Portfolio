@@ -1,5 +1,5 @@
 import { makePlayer } from "../entities/player.js";
-import { setBackgroundColor, setMapColliders, setDoors} from "./roomsUtil.js";
+import { setBackgroundColor, setMapColliders, setDoors, setMapLayers} from "./roomsUtil.js";
 
 export function homePage(k, roomData, sceneData = {})
 {
@@ -8,11 +8,12 @@ export function homePage(k, roomData, sceneData = {})
 
     const roomLayers = roomData.layers;
 
-    const map = k.add([k.pos(0,0), k.sprite("map")]);
+    //const map = k.add([k.pos(0,0), k.sprite("map")]);
     
     const colliders = [];
     const positions = [];
     const doors = [];
+    const behinds = [];
 
     for (const layer of roomLayers)
     {
@@ -29,9 +30,15 @@ export function homePage(k, roomData, sceneData = {})
         if(layer.name === "Wall Colliders" || layer.name === "Building Colliders")
         {
             colliders.push(...layer.objects);
+            continue;
+        }
+        if(layer.name === "Behind Zones")
+        {
+            behinds.push(...layer.objects);
         }
     }
     
+    setMapLayers(k, roomData);
     setMapColliders(k, map, colliders);
     setDoors(k, map, doors);
 

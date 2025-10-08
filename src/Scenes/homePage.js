@@ -8,7 +8,7 @@ export function homePage(k, roomData, sceneData = {})
 
     const roomLayers = roomData.layers;
 
-    //const map = k.add([k.pos(0,0), k.sprite("map")]);
+    const map = k.add([k.pos(0,0)]);
     
     const colliders = [];
     const positions = [];
@@ -35,12 +35,15 @@ export function homePage(k, roomData, sceneData = {})
         if(layer.name === "Behind Zones")
         {
             behinds.push(...layer.objects);
+            continue;
         }
     }
     
-    setMapLayers(k, roomData);
+    setMapLayers(k, map, roomData);
+
     setMapColliders(k, map, colliders);
     setDoors(k, map, doors);
+    //setBehind(k, map, behinds);
 
     const player = map.add(makePlayer(k));
 

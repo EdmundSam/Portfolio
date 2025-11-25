@@ -10,6 +10,7 @@ export function makePlayer(k)
         ),
         k.body({ isStatic: false, grav: 0 }),
         k.anchor("center"),
+        k.z(3), 
         "player",
         {
             speed: 150,

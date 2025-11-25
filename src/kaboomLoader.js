@@ -12,16 +12,8 @@ export const k = kaboom({
 });
 
 // Load map
-//k.loadSprite("map", "./maps/Portfolio Map.png");
+k.loadSprite("map", "./maps/Portfolio Map.png");
 
-
-// 🧭 Name map: Tiled name → Kaboom name
-const TILESET_MAP = {
-  "PortfolioTileMap": "PortfolioTileMap",
-  "Buildings": "Buildings"
-};
-
-// 🖼 Load sprites (Kaboom IDs, not Tiled names)
 k.loadSprite("PortfolioTileMap", "./sprites/PortfolioTileMap.png", {
   sliceX: 12, 
   sliceY: 6  

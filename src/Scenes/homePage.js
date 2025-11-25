@@ -1,5 +1,5 @@
 import { makePlayer } from "../entities/player.js";
-import { setBackgroundColor, setMapColliders, setDoors, setMapLayers} from "./roomsUtil.js";
+import { setBackgroundColor, setMapColliders, setDoors, setMapLayers, setBehind} from "./roomsUtil.js";
 
 export function homePage(k, roomData, sceneData = {})
 {
@@ -8,7 +8,7 @@ export function homePage(k, roomData, sceneData = {})
 
     const roomLayers = roomData.layers;
 
-    const map = k.add([k.pos(0,0)]);
+    const map = k.add([k.pos(0,0), k.sprite("map")]);
     
     const colliders = [];
     const positions = [];
@@ -40,13 +40,11 @@ export function homePage(k, roomData, sceneData = {})
     }
     
     setMapLayers(k, map, roomData);
-
     setMapColliders(k, map, colliders);
     setDoors(k, map, doors);
-    //setBehind(k, map, behinds);
 
+    // Create and spawn player at location
     const player = map.add(makePlayer(k));
-
     const spawnPosition = positions.find(pos => pos.name === spawn);
 
     if (spawnPosition) 
@@ -55,11 +53,15 @@ export function homePage(k, roomData, sceneData = {})
     }
     player.setControls();
 
-    k.camScale(2); //Zooms on player
+    setBehind(k, map, behinds, player);
+
+    // Camera zoom and follow player
+    k.camScale(2);
     k.onUpdate(() => {
-        k.camPos(player.pos.x, player.pos.y); //Makes camera follow player
+        k.camPos(player.pos.x, player.pos.y);
     });
 
+    // Door collision actions
     player.onCollide("door", (door) => {
         if (door.name === "Museum Door") {
             console.log("Entering Museum!");
@@ -73,6 +75,10 @@ export function homePage(k, roomData, sceneData = {})
             console.log("Entering House");
             k.go("housePage");
         }
+        if (door.name === "School Door") {
+            console.log("Entering School");
+            k.go("schoolPage");
+        }
     });
 
     // Set up Quicklinks and notes
@@ -80,14 +86,13 @@ export function homePage(k, roomData, sceneData = {})
 
     if (kaboomCanvas) 
     {
-        // Create a container div for your UI overlays
         const uiLayer = document.createElement("div");
         uiLayer.style.position = "fixed";
         uiLayer.style.top = "0";
         uiLayer.style.left = "0";
         uiLayer.style.width = "100%";
         uiLayer.style.height = "100%";
-        uiLayer.style.pointerEvents = "none";// Stops UI Canvas from interfering with other divs
+        uiLayer.style.pointerEvents = "none";
 
         const quickLinks = document.createElement("div");
         quickLinks.innerHTML = `
@@ -137,10 +142,9 @@ export function homePage(k, roomData, sceneData = {})
         uiLayer.appendChild(quickLinks);
         uiLayer.appendChild(wipLabel);
 
-        // Append the container AFTER the Kaboom canvas in the DOM to ensure it's on top
         kaboomCanvas.parentNode.insertBefore(uiLayer, kaboomCanvas.nextSibling);
 
-        // Add your event listeners
+        // Link directions
         quickLinks.querySelector("#toMuseum").addEventListener("click", (e) => {
             e.preventDefault();
             console.log("Going to museum page");
@@ -164,5 +168,4 @@ export function homePage(k, roomData, sceneData = {})
     {
         console.error("Kaboom canvas not found!");
     }
-
 }

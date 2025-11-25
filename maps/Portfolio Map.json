@@ -30,7 +30,7 @@
          "name":"Ground",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -64,7 +64,7 @@
          "name":"Paths",
          "opacity":1,
          "type":"tilelayer",
-         "visible":true,
+         "visible":false,
          "width":30,
          "x":0,
          "y":0
@@ -174,7 +174,6 @@
         {
          "draworder":"topdown",
          "id":5,
-         "locked":true,
          "name":"Building Colliders",
          "objects":[
                 {
@@ -220,17 +219,6 @@
                  "width":277.25,
                  "x":100.5,
                  "y":267
-                }, 
-                {
-                 "height":73.5,
-                 "id":79,
-                 "name":"Restaurant Behind",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":135,
-                 "x":699.25,
-                 "y":428
                 }],
          "offsetx":1,
          "offsety":2,
@@ -712,6 +700,12 @@
                  "height":24.7879,
                  "id":85,
                  "name":"Anteater Behind",
+                 "properties":[
+                        {
+                         "name":"z",
+                         "type":"string",
+                         "value":"1.5"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -723,12 +717,29 @@
                  "height":53,
                  "id":87,
                  "name":"Horse Behind",
+                 "properties":[
+                        {
+                         "name":"z",
+                         "type":"string",
+                         "value":"1.5"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":49,
                  "x":311,
                  "y":320
+                }, 
+                {
+                 "height":73.5,
+                 "id":90,
+                 "name":"Restaurant Behind",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":135,
+                 "x":700.75,
+                 "y":430.25
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -739,7 +750,6 @@
         {
          "draworder":"topdown",
          "id":6,
-         "locked":true,
          "name":"Positions",
          "objects":[
                 {
@@ -811,7 +821,6 @@
         {
          "draworder":"topdown",
          "id":7,
-         "locked":true,
          "name":"Doors",
          "objects":[
                 {
@@ -864,8 +873,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":18,
- "nextobjectid":88,
+ "nextlayerid":19,
+ "nextobjectid":91,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

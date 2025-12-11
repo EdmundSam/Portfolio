@@ -147,8 +147,37 @@ export function homePage(k, roomData, sceneData = {})
             </div>
         `;
 
+        const tags = document.createElement("div");
+        tags.innerHTML = `
+            <div style="
+                position: fixed;
+                bottom: .5vh;
+                left: .5vw;
+                color: white;
+                font-family: 'Pokemon';
+                font-size: 1.25vh;
+                padding: .5vh .5vw;
+                border-radius: 1vh;
+                white-space: normal;
+                word-wrap: break-word;
+                background: rgba(0, 0, 0, 0.5);
+                pointer-events: auto;
+            ">
+                Custom Music: 
+                <a href="https://www.youtube.com/@ronjoshtin" target="_blank" style="
+                    color: #00d0ff;
+                    text-decoration: underline;
+                    cursor: pointer;
+                ">
+                Aaron Hipolito<br>
+                </a>
+                Art: ME!
+        </div>
+        `;
+
         uiLayer.appendChild(quickLinks);
         uiLayer.appendChild(wipLabel);
+        uiLayer.appendChild(tags);
 
         kaboomCanvas.parentNode.insertBefore(uiLayer, kaboomCanvas.nextSibling);
 

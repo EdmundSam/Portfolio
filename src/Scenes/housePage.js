@@ -34,6 +34,30 @@ export function housePage(k) {
             cursor:pointer;
         ">✕</button>
 
+        <div style="
+                position: fixed;
+                bottom: .5vh;
+                left: .5vw;
+                color: white;
+                font-family: 'Pokemon';
+                font-size: 1.25vh;
+                padding: .5vh .5vw;
+                border-radius: 1vh;
+                white-space: normal;
+                word-wrap: break-word;
+                background: rgba(0, 0, 0, 0.5);
+            ">
+                Custom Music: 
+                <a href="https://www.youtube.com/@ronjoshtin" target="_blank" style="
+                    color: #00d0ff;
+                    text-decoration: underline;
+                    cursor: pointer;
+                ">
+                Aaron Hipolito<br>
+                </a>
+                Art: ME!
+        </div>
+
         <!-- Full-height black panel -->
         <div id="house-panel" style="
             position: relative;
@@ -66,7 +90,6 @@ export function housePage(k) {
     document.body.appendChild(houseOverlay);
 
     const panel = document.querySelector("#house-panel");
-    const content = document.querySelector("#house-content");
 
     houseOverlay.addEventListener("scroll", () => {
         const scrollPos = houseOverlay.scrollTop;

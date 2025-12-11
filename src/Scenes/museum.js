@@ -1,5 +1,8 @@
+import { musicManager } from "../entities/musicManager.js";
+
 export function museumPage(k) {
-    // Overlay container
+    musicManager.stop();
+
     const museumOverlay = document.createElement("div");
     museumOverlay.id = "museum-overlay";
     museumOverlay.style.position = "fixed";
@@ -34,9 +37,9 @@ export function museumPage(k) {
         <div style="
             display: flex;
             width: 100%;
-            height: 100%; /* ensure full viewport height */
+            height: 100%;
             justify-content: space-between;
-            align-items: stretch; /* instead of flex-start */
+            align-items: stretch;
             gap: 4vw;
             flex-wrap: wrap;">
 

@@ -1,8 +1,11 @@
 import { makePlayer } from "../entities/player.js";
 import { setBackgroundColor, setMapColliders, setDoors, setMapLayers, setBehind} from "./roomsUtil.js";
+import { musicManager } from "../entities/musicManager.js";
 
 export function homePage(k, roomData, sceneData = {})
 {
+    musicManager.play('./assets/Audio/Main.wav');
+
     setBackgroundColor(k, "#000000");
     const spawn = sceneData.spawn || "Spawn";
 
@@ -65,18 +68,22 @@ export function homePage(k, roomData, sceneData = {})
     player.onCollide("door", (door) => {
         if (door.name === "Museum Door") {
             console.log("Entering Museum!");
+            musicManager.stop();
             k.go("museumPage");
         }
         if (door.name === "Restaurant Door") {
             console.log("Entering Restaurant!");
+            musicManager.stop();
             k.go("restaurantPage");
         }
         if (door.name === "House Door") {
             console.log("Entering House");
+            musicManager.stop();
             k.go("housePage");
         }
         if (door.name === "School Door") {
             console.log("Entering School");
+            musicManager.stop();
             k.go("schoolPage");
         }
     });
@@ -112,7 +119,8 @@ export function homePage(k, roomData, sceneData = {})
             pointer-events: auto;
         ">
             <div style="font-size: 2vh; text-align: center;">Quick Links<br></div>
-            <a href="#" id="toHouse" style="color: #00d0ff; cursor: pointer;">Resume</a><br><br>
+            <a href="#" id="toHouse" style="color: #00d0ff; cursor: pointer;">About Me</a><br>
+            <a href="#" id="toSchool" style="color: #00d0ff; cursor: pointer;">Resume</a><br><br>
 
             <div style="font-size: 1.75vh;">Projects:<br></div>
             <a href="#" id="toRestaurant" style="color: #00d0ff; cursor: pointer;">Order Up!</a><br>
@@ -161,6 +169,12 @@ export function homePage(k, roomData, sceneData = {})
             e.preventDefault();
             console.log("Going to house page");
             k.go("housePage");
+        });
+
+        quickLinks.querySelector("#toSchool").addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log("Going to school page");
+            k.go("schoolPage");
         });
     } 
     

@@ -1,5 +1,8 @@
+import { musicManager } from "../entities/musicManager.js";
+
 export function schoolPage(k) {
-    // Overlay container
+    musicManager.play('./assets/Audio/School.wav');
+
     const schoolOverlay = document.createElement("div");
     schoolOverlay.id = "school-overlay";
     schoolOverlay.style.position = "fixed";
@@ -27,6 +30,7 @@ export function schoolPage(k) {
 
     document.getElementById("close-school").addEventListener("click", () => {
         document.body.removeChild(schoolOverlay);
+        musicManager.stop();
         k.go("HomePage", { spawn: "School Spawn" });
 
         const canvas = document.querySelector("canvas");

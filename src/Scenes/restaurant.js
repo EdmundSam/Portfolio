@@ -1,5 +1,8 @@
+import { musicManager } from "../entities/musicManager.js";
+
 export function restaurantPage(k) {
-    // Overlay container
+    musicManager.play('./assets/audio/Restaurant.wav');
+
     const overlay = document.createElement("div");
     overlay.id = "orderup-overlay";
     overlay.style.position = "fixed";
@@ -142,6 +145,7 @@ export function restaurantPage(k) {
 
     document.getElementById("close-restaurant").addEventListener("click", () => {
         document.body.removeChild(overlay);
+        musicManager.stop();
         k.go("HomePage", { spawn: "Restaurant Spawn" });
 
         const canvas = document.querySelector("canvas");

@@ -10,7 +10,7 @@ export function restaurantPage(k) {
     overlay.style.left = "0";
     overlay.style.width = "100%";
     overlay.style.height = "100%";
-    overlay.style.background = "url('./assets/Restaurant Background.png') repeat";
+    overlay.style.background = "url('./assets/Images/Restaurant Background.png') repeat";
     overlay.style.backgroundSize = "cover";
     overlay.style.display = "flex";
     overlay.style.justifyContent = "center";
@@ -19,6 +19,7 @@ export function restaurantPage(k) {
     overlay.style.overflow = "auto";
 
     overlay.innerHTML = `
+        <!-- Close button -->
         <button 
             id="close-restaurant" 
             style="position:absolute; 
@@ -33,6 +34,7 @@ export function restaurantPage(k) {
             >✕
         </button>
 
+        <!-- Credits -->
         <div style="
                 position: fixed;
                 bottom: .5vh;
@@ -91,7 +93,7 @@ export function restaurantPage(k) {
                 display: flex; 
                 flex-direction: column; 
                 align-items: center;">
-                    <img style='width:15vw; margin:5px;' alt='Order Up! Logo' src='./assets/Order Up Logo.png'>
+                    <img style='width:15vw; margin:5px;' alt='Order Up! Logo' src='./assets/Images/Order Up Logo.png'>
                     <div style="width:100%; border-top:2px dotted #0cc0df; margin:2vh 0;"></div>
 
                     <!-- Images -->
@@ -103,19 +105,19 @@ export function restaurantPage(k) {
                     justify-content: center; 
                     align-items: center">
                         <!-- Art -->
-                        <a href='./assets/Order Up Cards.png' target='_blank'>
-                            <img src='./assets/Order Up Cards.png' style='width: 12vw; margin-bottom:1vh;' alt='Order Up Artwork Preview'>
+                        <a href='./assets/Images/Order Up Cards.png' target='_blank'>
+                            <img src='./assets/Images/Order Up Cards.png' style='width: 12vw; margin-bottom:1vh;' alt='Order Up Artwork Preview'>
                         </a>
                         <p style = "margin: 0;">
-                            <a href='./assets/Order Up Cards.png' target='_blank'>Artwork</a>
+                            <a href='./assets/Images/Order Up Cards.png' target='_blank'>Artwork</a>
                         </p>
 
                         <!-- Rules -->
-                        <a href='./assets/Order Up! Rules.png' target='_blank'>
-                            <img src='./assets/Order Up! Rules.png' style='width:12vw; margin-bottom:1vh; margin-top: 2vh;' alt='Order Up Rulebook Preview'>
+                        <a href='./assets/Images/Order Up! Rules.png' target='_blank'>
+                            <img src='./assets/Images/Order Up! Rules.png' style='width:12vw; margin-bottom:1vh; margin-top: 2vh;' alt='Order Up Rulebook Preview'>
                         </a>
                         <p style = "margin: 0;">
-                            <a href='./assets/Order Up! Rules.png' target='_blank'>Rules</a>
+                            <a href='./assets/Images/Order Up! Rules.png' target='_blank'>Rules</a>
                         </p>
                     </div>
                 </div>
@@ -167,6 +169,7 @@ export function restaurantPage(k) {
 
     document.body.appendChild(overlay);
 
+    // Close Button
     document.getElementById("close-restaurant").addEventListener("click", () => {
         document.body.removeChild(overlay);
         musicManager.stop();

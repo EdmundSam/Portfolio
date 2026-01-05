@@ -37,7 +37,7 @@ k.loadSprite("player", "./sprites/Character.png",
     },
 });
 
-k.loadFont("Pokemon", "./assets/PokemonClassic.ttf");
-k.loadFont("Charter", "./assets/Charter.ttf");
-k.loadFont("Copperplate", "./assets/Copperplate.otf");
-k.loadFont("BarlowXB", "./assets/BarlowXB.ttf");
+k.loadFont("Pokemon", "./assets/Fonts/PokemonClassic.ttf");
+k.loadFont("Charter", "./assets/Fonts/Charter.ttf");
+k.loadFont("Copperplate", "./assets/Fonts/Copperplate.otf");
+k.loadFont("BarlowXB", "./assets/Fonts/BarlowXB.ttf");

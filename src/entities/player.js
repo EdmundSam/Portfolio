@@ -6,8 +6,7 @@ export function makePlayer(k)
         k.area(
             {
                 shape: new k.Rect(k.vec2(0, 16), 24, 16),
-            }
-        ),
+            }),
         k.body({ isStatic: false, grav: 0 }),
         k.anchor("center"),
         k.z(3), 
@@ -46,18 +45,18 @@ export function makePlayer(k)
                             if (currentDir === key) {
                                 currentDir = null;
                                 this.stop();
-                                this.frame = idleFrame; // 👈 go to idle frame for that direction
+                                this.frame = idleFrame;
                             }
                         })
                     );
                 };
 
-                // pass in the correct idle frame index for each direction
+                // Set idle frames
                 setupControl("left",  "left",  -1,  0, 4);
                 setupControl("right", "right",  1,  0, 8);
                 setupControl("up",    "up",     0, -1, 12);
                 setupControl("down",  "down",   0,  1, 0);
             }
-                    },
+        },
     ])
 }

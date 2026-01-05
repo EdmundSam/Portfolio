@@ -13,7 +13,7 @@ export function housePage(k) {
         width: "100%",
         height: "100%",
         overflowY: "auto",
-        background: "url('./assets/Fireplace.png') no-repeat center center",
+        background: "url('./assets/Images/Fireplace.png') no-repeat center center",
         backgroundSize: "cover",
         display: "flex",
         justifyContent: "center",
@@ -22,6 +22,7 @@ export function housePage(k) {
     });
 
     houseOverlay.innerHTML = `
+        <!-- Close button -->
         <button id="close-house" style="
             position:fixed;
             top:20px;
@@ -34,6 +35,7 @@ export function housePage(k) {
             cursor:pointer;
         ">✕</button>
 
+        <!-- Credits -->
         <div style="
                 position: fixed;
                 bottom: .5vh;
@@ -58,7 +60,7 @@ export function housePage(k) {
                 Art: ME!
         </div>
 
-        <!-- Full-height black panel -->
+        <!-- Scrollable Panel -->
         <div id="house-panel" style="
             position: relative;
             width: 60%;
@@ -91,14 +93,14 @@ export function housePage(k) {
 
     const panel = document.querySelector("#house-panel");
 
+    // Scrollable overlay
     houseOverlay.addEventListener("scroll", () => {
         const scrollPos = houseOverlay.scrollTop;
 
-        // How far up the panel should move
-        const maxSlide = 66; // starting offset in vh
-        const finalTop = 5;  // where it should end
+        const maxSlide = 66; 
+        const finalTop = 5; 
 
-        const limit = 300; // how many px of scroll triggers full slide
+        const limit = 300;
         const progress = Math.min(scrollPos / limit, 1);
 
         const newTop = maxSlide - (maxSlide - finalTop) * progress;
@@ -106,6 +108,7 @@ export function housePage(k) {
         panel.style.top = `${newTop}vh`;
     });
 
+    // Close button
     document.getElementById("close-house").addEventListener("click", () => {
         document.body.removeChild(houseOverlay);
         k.go("HomePage", { spawn: "House Spawn" });

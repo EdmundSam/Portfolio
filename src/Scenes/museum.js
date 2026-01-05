@@ -10,7 +10,7 @@ export function museumPage(k) {
     museumOverlay.style.left = "0";
     museumOverlay.style.width = "100%";
     museumOverlay.style.height = "100%";
-    museumOverlay.style.background = "url('./assets/Gradient.png') no-repeat center center";
+    museumOverlay.style.background = "url('./assets/Images/Gradient.png') no-repeat center center";
     museumOverlay.style.backgroundSize = "100% 100%";
     museumOverlay.style.display = "flex";
     museumOverlay.style.flexDirection = "row";
@@ -53,10 +53,11 @@ export function museumPage(k) {
         align-items:center; 
         justify-content:center">
             
+            <!-- Video and frame -->
             <div style="
                 width: 100%;           
                 aspect-ratio: 16 / 9;
-                background: url('./assets/PictureFrame.png') no-repeat center center;
+                background: url('./assets/Images/PictureFrame.png') no-repeat center center;
                 background-size: contain;
                 display: flex;
                 justify-content: center;
@@ -74,13 +75,13 @@ export function museumPage(k) {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                background: url('./assets/BlankPlaque.PNG') no-repeat center center;
+                background: url('./assets/Images/BlankPlaque.PNG') no-repeat center center;
                 background-size: contain;
                 padding: 10px; 
                 margin-top: 2vh;
             ">
                 <!-- Logo -->
-                <img src='./assets/Cat Burglars Icon.png' style='width: clamp(5%, 2vw, 30%);'>
+                <img src='./assets/Images/Cat Burglars Icon.png' style='width: clamp(5%, 2vw, 30%);'>
 
                 <!-- Game title -->
                 <h2 style='margin:5px 0 0 0; font-size: clamp(10px, 1vw, 30px) font-family: Charter;'>Cat Burglars</h2>
@@ -112,7 +113,7 @@ export function museumPage(k) {
     
     document.body.appendChild(museumOverlay);
 
-    // Exit button listener
+    // Close Button
     document.getElementById("close-museum").addEventListener("click", () => {
         document.body.removeChild(museumOverlay);
         k.go("HomePage", { spawn: "Museum Spawn" });

@@ -7,6 +7,7 @@ export function homePage(k, roomData, sceneData = {})
     musicManager.play('./assets/Audio/Main.wav');
 
     setBackgroundColor(k, "#000000");
+
     const spawn = sceneData.spawn || "Spawn";
 
     const roomLayers = roomData.layers;
@@ -18,6 +19,7 @@ export function homePage(k, roomData, sceneData = {})
     const doors = [];
     const behinds = [];
 
+    // Put layers into variables
     for (const layer of roomLayers)
     {
         if (layer.name === "Positions")
@@ -64,7 +66,7 @@ export function homePage(k, roomData, sceneData = {})
         k.camPos(player.pos.x, player.pos.y);
     });
 
-    // Door collision actions
+    // Set door collisions
     player.onCollide("door", (door) => {
         if (door.name === "Museum Door") {
             console.log("Entering Museum!");
@@ -181,7 +183,7 @@ export function homePage(k, roomData, sceneData = {})
 
         kaboomCanvas.parentNode.insertBefore(uiLayer, kaboomCanvas.nextSibling);
 
-        // Link directions
+        // Links
         quickLinks.querySelector("#toMuseum").addEventListener("click", (e) => {
             e.preventDefault();
             console.log("Going to museum page");

@@ -10,7 +10,7 @@ export function schoolPage(k) {
     schoolOverlay.style.left = "0";
     schoolOverlay.style.width = "100%";
     schoolOverlay.style.height = "100%";
-    schoolOverlay.style.background = "url('./assets/Desk.png') no-repeat center center";
+    schoolOverlay.style.background = "url('./assets/Images/Desk.png') no-repeat center center";
     schoolOverlay.style.backgroundSize = "cover";
     schoolOverlay.style.display = "flex";
     schoolOverlay.style.justifyContent = "center";
@@ -18,13 +18,29 @@ export function schoolPage(k) {
     schoolOverlay.style.zIndex = "999";
 
     schoolOverlay.innerHTML = `
-        <button id="close-school" style="position:absolute; top:20px; right:20px; width:40px; height:40px; border-radius:50%; font-size:22px; font-weight:bold; cursor:pointer;">✕</button>
+        <!-- Close button -->
+        <button 
+            id="close-restaurant" 
+            style="position:absolute; 
+            top:20px; 
+            right:20px;
+            width:40px; 
+            height:40px; 
+            border-radius:50%; 
+            font-size:22px; 
+            font-weight:bold; 
+            cursor:pointer;"
+            >✕
+        </button>
+
+        <!-- Resume -->
         <div style="width:28%; height:75%">
             <a href='./assets/Resume.pdf' target='_blank'>
-                <img src="./assets/ResumeImage.png" alt='Resume' style='width:100%; height:100%; display:block; cursor:pointer;'>
+                <img src="./assets/Images/ResumeImage.png" alt='Resume' style='width:100%; height:100%; display:block; cursor:pointer;'>
             </a>
         </div>
 
+        <!-- Credits -->
         <div style="
                 position: fixed;
                 bottom: .5vh;
@@ -52,6 +68,7 @@ export function schoolPage(k) {
 
     document.body.appendChild(schoolOverlay);
 
+    // Close Button
     document.getElementById("close-school").addEventListener("click", () => {
         document.body.removeChild(schoolOverlay);
         musicManager.stop();

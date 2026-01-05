@@ -2,7 +2,7 @@ import {setBackgroundColor} from "./roomsUtil.js";
 
 export function intro(k)
 {
-     // Background (optional, can be solid color or image)
+     // Background
     k.add([
         k.rect(k.width(), k.height()),
         k.color(0, 0, 0), 

@@ -1,13 +1,15 @@
 export const musicManager = {
     current: null,
 
-    play(src, volume = 0.25) {
+    play(music, volume = 0.15) {
+        // Check if there's audio playing and reset timer
         if (this.current) {
             this.current.pause();
             this.current.currentTime = 0;
         }
 
-        const audio = new Audio(src);
+        // Play new audio
+        const audio = new Audio(music);
         audio.loop = true;
         audio.volume = volume;
         audio.play();
@@ -15,6 +17,7 @@ export const musicManager = {
         this.current = audio;
     },
 
+    // Stop music
     stop() {
         if (this.current) {
             this.current.pause();
@@ -22,8 +25,4 @@ export const musicManager = {
             this.current = null;
         }
     },
-
-    pause() {
-        if (this.current) this.current.pause();
-    }
 };

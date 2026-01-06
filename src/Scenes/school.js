@@ -23,7 +23,7 @@ export function schoolPage(k) {
             id="close-school" 
             style="position:absolute; 
             top:20px; 
-            right:20px;
+            right:20px; 
             width:40px; 
             height:40px; 
             border-radius:50%; 

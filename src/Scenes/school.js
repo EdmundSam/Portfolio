@@ -20,7 +20,7 @@ export function schoolPage(k) {
     schoolOverlay.innerHTML = `
         <!-- Close button -->
         <button 
-            id="close-restaurant" 
+            id="close-school" 
             style="position:absolute; 
             top:20px; 
             right:20px;
@@ -35,7 +35,7 @@ export function schoolPage(k) {
 
         <!-- Resume -->
         <div style="width:28%; height:75%">
-            <a href='./assets/Resume.pdf' target='_blank'>
+            <a href='./assets/Images/Resume.pdf' target='_blank'>
                 <img src="./assets/Images/ResumeImage.png" alt='Resume' style='width:100%; height:100%; display:block; cursor:pointer;'>
             </a>
         </div>

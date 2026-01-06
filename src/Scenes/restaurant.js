@@ -1,7 +1,7 @@
 import { musicManager } from "../entities/musicManager.js";
 
 export function restaurantPage(k) {
-    musicManager.play('./assets/audio/Restaurant.wav');
+    musicManager.play('./assets/Audio/Restaurant.wav');
 
     const overlay = document.createElement("div");
     overlay.id = "orderup-overlay";

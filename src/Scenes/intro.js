@@ -15,22 +15,20 @@ export function intro(k)
     const size = 24;
     const lineSpacing = 6;
 
-    const lines = textStr.split("\n").length;
-    const totalHeight = lines * (size + lineSpacing);
-
-    // Center Y manually
     const introText = k.add([
         k.text(textStr, {
             size: size,
             width: k.width(),
             align: "center",
             font: "Pokemon",
-            baseline: "top",
+            baseline: "top",  // Safari-safe
             lineSpacing: lineSpacing,
         }),
-        k.pos(0, k.height()/2 - totalHeight/2),
+        k.pos(0, 0), // temporary
         k.color(255,255,255),
     ]);
+
+    introText.pos.y = k.height()/2 - introText.height/2;
 
 
     // Wait for click or key press to continue

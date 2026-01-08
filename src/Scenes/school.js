@@ -16,6 +16,7 @@ export function schoolPage(k) {
     schoolOverlay.style.justifyContent = "center";
     schoolOverlay.style.alignItems = "center";
     schoolOverlay.style.zIndex = "999";
+
     schoolOverlay.innerHTML = `
         <!-- Close button -->
         <button 
@@ -28,14 +29,14 @@ export function schoolPage(k) {
             border-radius:50%; 
             font-size:22px; 
             font-weight:bold; 
-            cursor:pointer;">
-            ✕
+            cursor:pointer;"
+            >✕
         </button>
 
         <!-- Resume -->
         <div style="width:28%; height:75%">
-            <a id="resume-link" target="_blank" href="/Portfolio/assets/Images/Resume.pdf">
-                <img src="/Portfolio/assets/Images/ResumeImage.png" alt="Resume" style="width:100%; height:100%; display:block; cursor:pointer;">
+            <a href='/Portfolio/assets/Images/Resume.pdf' target='_blank'>
+                <img src="/Portfolio/assets/Images/ResumeImage.png" alt='Resume' style='width:100%; height:100%; display:block; cursor:pointer;'>
             </a>
         </div>
 
@@ -57,7 +58,8 @@ export function schoolPage(k) {
                 <a href="https://www.youtube.com/@ronjoshtin" target="_blank" style="
                     color: #00d0ff;
                     text-decoration: underline;
-                    cursor: pointer;">
+                    cursor: pointer;
+                ">
                 Aaron Hipolito<br>
                 </a>
                 Art: ME!
@@ -73,6 +75,8 @@ export function schoolPage(k) {
         k.go("HomePage", { spawn: "School Spawn" });
 
         const canvas = document.querySelector("canvas");
-        if (canvas) canvas.focus();
+        if (canvas) {
+            canvas.focus();
+        }
     });
 }

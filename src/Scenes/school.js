@@ -3,7 +3,7 @@ import { musicManager } from "../entities/musicManager.js";
 export function schoolPage(k) {
     const ASSETS = "/Portfolio/assets/";
 
-    musicManager.play(`${ASSETS}Audio/School.wav`);
+    musicManager.play('./assets/Audio/School.wav');
 
     const schoolOverlay = document.createElement("div");
     schoolOverlay.id = "school-overlay";
@@ -12,14 +12,12 @@ export function schoolPage(k) {
     schoolOverlay.style.left = "0";
     schoolOverlay.style.width = "100%";
     schoolOverlay.style.height = "100%";
-    schoolOverlay.style.background = "url(''./assets/Images/Desk.png') no-repeat center center";
+    schoolOverlay.style.background = "url('./assets/Images/Desk.png') no-repeat center center";
     schoolOverlay.style.backgroundSize = "cover";
     schoolOverlay.style.display = "flex";
     schoolOverlay.style.justifyContent = "center";
     schoolOverlay.style.alignItems = "center";
     schoolOverlay.style.zIndex = "999";
-
-    // Inject most of the layout with innerHTML
     schoolOverlay.innerHTML = `
         <!-- Close button -->
         <button 

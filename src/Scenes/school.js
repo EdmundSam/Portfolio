@@ -3,6 +3,8 @@ import { musicManager } from "../entities/musicManager.js";
 export function schoolPage(k) {
     musicManager.play('./assets/Audio/School.wav');
 
+    const ASSETS = new URL("../assets/", import.meta.url).href;
+
     const schoolOverlay = document.createElement("div");
     schoolOverlay.id = "school-overlay";
     schoolOverlay.style.position = "fixed";
@@ -35,8 +37,8 @@ export function schoolPage(k) {
 
         <!-- Resume -->
         <div style="width:28%; height:75%">
-            <a href='./assets/Images/Resume.pdf' target='_blank'>
-                <img src="./assets/Images/ResumeImage.png" alt='Resume' style='width:100%; height:100%; display:block; cursor:pointer;'>
+            <a href='${ASSETS}Images/Resume.pdf' target='_blank'>
+                <img src="${ASSETS}Images/ResumeImage.png" alt='Resume' style='width:100%; height:100%; display:block; cursor:pointer;'>
             </a>
         </div>
 

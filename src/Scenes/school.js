@@ -1,8 +1,6 @@
 import { musicManager } from "../entities/musicManager.js";
 
 export function schoolPage(k) {
-    const ASSETS = "/Portfolio/assets/";
-
     musicManager.play('./assets/Audio/School.wav');
 
     const schoolOverlay = document.createElement("div");
@@ -70,8 +68,8 @@ export function schoolPage(k) {
 
     document.body.appendChild(schoolOverlay);
 
-    const resumeLink = document.getElementById("resume-link");
-    resumeLink.href = `./assets/Images/Resume.pdf`;
+    //const resumeLink = document.getElementById("resume-link");
+    //resumeLink.href = "./assets/Images/Resume.pdf";
 
     // Close Button
     document.getElementById("close-school").addEventListener("click", () => {

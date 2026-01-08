@@ -10,20 +10,28 @@ export function intro(k)
     ]);
 
     // Text box
+    const textStr = "Welcome to Edmund's Portfolio!\n\nMove around using the arrow keys and enter the buildings to explore my portfolio.\n\nClick anywhere to continue.";
+
+    const size = 24;
+    const lineSpacing = 6;
+
+    const lines = textStr.split("\n").length;
+    const totalHeight = lines * (size + lineSpacing);
+
+    // Center Y manually
     const introText = k.add([
-        k.text(
-            "Welcome to Edmund's Portfolio!\n\nMove around using the arrow keys and enter the buildings to explore my portfolio.\n\nClick anywhere to continue.",
-            {
-                size: 24,
-                width: k.width(), // wrap text
-                align: "center",
-                font: "Pokemon",
-                baseline: "middle",
-            }
-        ),
-        k.pos(20, k.height() / 2 - 100),
-        k.color(255, 255, 255),
+        k.text(textStr, {
+            size: size,
+            width: k.width(),
+            align: "center",
+            font: "Pokemon",
+            baseline: "top",
+            lineSpacing: lineSpacing,
+        }),
+        k.pos(0, k.height()/2 - totalHeight/2),
+        k.color(255,255,255),
     ]);
+
 
     // Wait for click or key press to continue
     const proceed = () => {

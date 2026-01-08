@@ -69,7 +69,7 @@ export function schoolPage(k) {
     document.body.appendChild(schoolOverlay);
 
     const resumeLink = document.getElementById("resume-link");
-    resumeLink.href = 'Portfolio/assets/Images/Resume.pdf';
+    resumeLink.href = '/Portfolio/assets/Images/Resume.pdf';
 
     // Close Button
     document.getElementById("close-school").addEventListener("click", () => {

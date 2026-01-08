@@ -19,7 +19,6 @@ export function intro(k)
                 align: "center",
                 font: "Pokemon",
                 baseline: "middle",
-                lineSpacing: 24,
             }
         ),
         k.pos(20, k.height() / 2 - 100),

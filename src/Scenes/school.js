@@ -3,7 +3,7 @@ import { musicManager } from "../entities/musicManager.js";
 export function schoolPage(k) {
     musicManager.play('./assets/Audio/School.wav');
 
-    const ASSETS = new URL("../assets/", import.meta.url).href;
+    const ASSETS = new URL("assets/", document.baseURI).href;
 
     const schoolOverlay = document.createElement("div");
     schoolOverlay.id = "school-overlay";
